@@ -47,9 +47,6 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    - name: Import Existing Resource
-      run: terraform import azurerm_resource_group.student_rg /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID }}/resourceGroups/student-rg
-
     - name: Terraform Plan
       run: terraform plan
 
