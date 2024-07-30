@@ -1,7 +1,3 @@
-provider "azurerm" {
-  features {}
-}
-
 terraform {
   required_version = ">=0.12"
   required_providers {
@@ -20,5 +16,10 @@ terraform {
   }
   backend "local" {
     path = "terraform.tfstate"
+  }
+}
+
+provider "azurerm" {
+  features {
   }
 }
