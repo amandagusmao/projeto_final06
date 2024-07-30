@@ -64,7 +64,7 @@ jobs:
       run: terraform apply -auto-approve
 
     - name: Install Ansible
-      run: sudo apt-get update && sudo apt-get install -y ansible
+      run: sudo apt-get update && sudo apt-get install -y ansible sshpass
 
     - name: Run Ansible Playbook
       run: ansible-playbook -i inventory.ini playbook.yml
