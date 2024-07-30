@@ -11,15 +11,6 @@
       apt:
         upgrade: dist
 
-    - name: Instalar Python 3 e dependências
-      apt:
-        name:
-          - python3
-          - python3-pip
-          - python3-setuptools
-          - python3-apt
-        state: present
-
     - name: Instalar Nginx
       apt:
         name: nginx
