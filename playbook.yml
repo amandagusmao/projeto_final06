@@ -16,6 +16,16 @@
         name: nginx
         state: present
 
+    - name: Instalar Python 3
+      apt:
+        name: python3
+        state: present
+
+    - name: Instalar pip para Python 3
+      apt:
+        name: python3-pip
+        state: present
+
     - name: Iniciar e habilitar o serviço Nginx
       systemd:
         name: nginx
