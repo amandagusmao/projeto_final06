@@ -1,0 +1,23 @@
+---
+- name: Configurar VM
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: Atualizar lista de pacotes apt
+      apt:
+        update_cache: yes
+
+    - name: Atualizar todos os pacotes instalados
+      apt:
+        upgrade: dist
+
+    - name: Instalar Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Iniciar e habilitar o serviço Nginx
+      systemd:
+        name: nginx
+        state: started
+        enabled: yes
