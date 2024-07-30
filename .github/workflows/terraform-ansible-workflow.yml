@@ -30,6 +30,11 @@ jobs:
     - name: Format Terraform
       run: terraform fmt -check
 
+    - uses: terraform-linters/setup-tflint@v4
+      name: Setup TFLint
+      with:
+        tflint_version: v0.50.3
+
     - name: Lint Terraform
       run: tflint
 
