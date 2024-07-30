@@ -55,7 +55,7 @@ jobs:
         terraform import azurerm_network_security_group.student_nsg /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/networkSecurityGroups/student-nsg
         terraform import azurerm_public_ip.student_pip /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/publicIPAddresses/student-pip
         terraform import azurerm_network_interface.student_nic /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/networkInterfaces/student-nic
-        terraform import azurerm_linux_virtual_machine.student_vm /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Compute/virtualMachines/student-vm
+        terraform import azurerm_virtual_machine.student_vm /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Compute/virtualMachines/student-vm
 
     - name: Terraform Plan
       run: terraform plan
