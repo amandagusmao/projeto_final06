@@ -101,7 +101,9 @@ resource "azurerm_virtual_machine" "student_vm" {
 
 resource "local_file" "inventory" {
   content = templatefile("inventory.tpl", {
-    host_ip = azurerm_public_ip.student_pip.ip_address,
+    web_ip = azurerm_public_ip.student_pip.ip_address,
+    web_user = var.vm_username,
+    web_password = var.vm_password
   })
   filename = "inventory.ini"
 }
