@@ -1,7 +1,7 @@
 ---
 - name: Configurar VM
   hosts: webserver
-  become: yes
+  become: true
   tasks:
     - name: Atualizar lista de pacotes apt
       apt:
