@@ -24,8 +24,9 @@ jobs:
 
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v3
-      with:
-        terraform_version: 1.8.5
+
+    - name: Install Ansible
+      run: sudo apt-get update && sudo apt-get install -y ansible sshpass
 
     - name: Format Terraform
       run: terraform fmt -check
@@ -63,8 +64,7 @@ jobs:
     - name: Terraform Apply
       run: terraform apply -auto-approve
 
-    - name: Install Ansible
-      run: sudo apt-get update && sudo apt-get install -y ansible sshpass
-
     - name: Run Ansible Playbook
       run: ansible-playbook -i inventory.ini playbook.yml
+      env:
+        ANSIBLE_HOST_KEY_CHECKING: false
