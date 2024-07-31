@@ -48,15 +48,15 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    # - name: Import Existing Resources
-    #   run: |
-    #     terraform import azurerm_resource_group.student_rg /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg
-    #     terraform import azurerm_virtual_network.student_vnet /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/virtualNetworks/student-vnet
-    #     terraform import azurerm_subnet.student_subnet /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/virtualNetworks/student-vnet/subnets/student-subnet
-    #     terraform import azurerm_network_security_group.student_nsg /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/networkSecurityGroups/student-nsg
-    #     terraform import azurerm_public_ip.student_pip /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/publicIPAddresses/student-pip
-    #     terraform import azurerm_network_interface.student_nic /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/networkInterfaces/student-nic
-    #     terraform import azurerm_virtual_machine.student_vm /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Compute/virtualMachines/student-vm
+    - name: Import Existing Resources
+      run: |
+        terraform import azurerm_resource_group.student_rg /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg
+        terraform import azurerm_virtual_network.student_vnet /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/virtualNetworks/student-vnet
+        terraform import azurerm_subnet.student_subnet /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/virtualNetworks/student-vnet/subnets/student-subnet
+        terraform import azurerm_network_security_group.student_nsg /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/networkSecurityGroups/student-nsg
+        terraform import azurerm_public_ip.student_pip /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/publicIPAddresses/student-pip
+        terraform import azurerm_network_interface.student_nic /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Network/networkInterfaces/student-nic
+        terraform import azurerm_virtual_machine.student_vm /subscriptions/${{ secrets.ARM_SUBSCRIPTION_ID}}/resourceGroups/student-rg/providers/Microsoft.Compute/virtualMachines/student-vm
 
     - name: Terraform Plan
       run: terraform plan
